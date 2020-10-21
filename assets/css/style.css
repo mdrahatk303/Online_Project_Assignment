@@ -17,7 +17,7 @@
 body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
-	background: var(--light-color);
+	background:#2d2c2a;
 	margin: 20px;
 }
 
@@ -193,3 +193,5 @@ a {
 	margin: 2%;
 	float: right;
 }
+
+

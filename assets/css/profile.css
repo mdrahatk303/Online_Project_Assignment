@@ -1,14 +1,17 @@
 body{
-    background-color: #e6e9ff;
+    background-color: #2d2c2a;
 }
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 500px;
     margin: auto;
-   
+   /* border-radius: 12%; */
+   background: #1f2025;
     text-align: center;
-    font-family: arial;
+    font-style: italic;
+    font-family: cursive;
+    border: solid #545456;
   }
   
   .title {
