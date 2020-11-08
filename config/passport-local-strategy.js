@@ -86,24 +86,25 @@ function(req,email, password, done){
 passport.serializeUser(function(user, done){
     // if(user.ID!='1')
     // {
-        console.log("Student");
-        done(null, user.ID);
+    //     console.log("Student");
+    //     done(null, user.ID);
     // }
     // else
     // {
     //     console.log("Professor");
     //     done(null,user.ID);
     // }
+    done(null,user.identity);
 });
 
 
 
 // deserializing the user from the key in the cookies
 passport.deserializeUser(function(id, done){
-    // if(id!=='1')
-    // {
-        console.log("Student");
-        User.findOne({ID:id}, function(err, user){
+    if(id[0]==='s')
+    {
+        console.log(id+" "+"student");
+        User.findOne({identity:id}, function(err, user){
             if(err){
                 console.log('Error in finding user --> Passport');
                 return done(err);
@@ -111,18 +112,18 @@ passport.deserializeUser(function(id, done){
 
             return done(null, user);
         });
-    // }
-    // else{
-    //     console.log("Professor");
-    //     Prof.findOne({ID:id}, function(err, user){
-    //         if(err){
-    //             console.log('Error in finding user --> Passport');
-    //             return done(err);
-    //         }
+    }
+    else{
+        console.log(id+" prof");
+        Prof.findOne({identity:id}, function(err, user){
+            if(err){
+                console.log('Error in finding user --> Passport');
+                return done(err);
+            }
 
-    //         return done(null, user);
-    //     });
-    // }
+            return done(null, user);
+        });
+    }
 });
 
 
@@ -134,13 +135,15 @@ passport.checkAuthentication = function(req, res, next){
     }
 
     // if the user is not signed in then take it to sign-in page
-    console.log("Professor not loggedin");
+    // console.log("Professor not loggedin");
     return res.redirect('/');
 }
 
 passport.setAuthenticatedUser = function(req, res, next){
     // console.log("here Prof")
+    // console.log(req.user);
     if (req.isAuthenticated()){
+        
         // req.user contains the current signed in user from the session cookie and we are just sending this to the locals for the views
         res.locals.user = req.user;
     }
