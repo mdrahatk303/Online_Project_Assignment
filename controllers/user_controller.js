@@ -8,7 +8,7 @@ module.exports.create_session= async function(req,res)
 {
     req.flash('success','Welcome '+req.user.email);
     
-    return  res.redirect('/enter')//{user:req.user});
+    return  res.redirect('/stud/enter')//{user:req.user});
 
     // //Manual Authentication
     // try {
@@ -61,12 +61,18 @@ module.exports.create=async function(req,res)
             if(user)
             {
                 console.log("User already exists");
-                req.flash('error',user.email+'is already registered!!')
+                req.flash('error',user.email+' already registered!!')
                 return res.redirect('back');
             }
             else
             {
-                let newuser=await User.create(req.body);
+                let newuser=await User.create({
+                    name:req.body.name,
+                    email:req.body.email,
+                    password:req.body.password,
+                    identity:"student"+req.body.email,
+                    
+                });
                 console.log(newuser);
                 req.flash('success','Successfully Registered!!')
                 return res.redirect('/');
@@ -130,9 +136,11 @@ module.exports.update= async function(req,res)
                 return res.redirect('back');
 
             } 
+            console.log(req.body);
             user.name=req.body.name;
             user.email=req.body.email;
             user.cgpa=req.body.cgpa;
+            user.enrollment=req.body.enrollment;
             user.percentage=req.body.percentage;
             console.log(req.file);
             if(req.file)
