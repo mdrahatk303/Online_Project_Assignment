@@ -17,9 +17,10 @@ const User_Schema=mongoose.Schema({
         type:String, 
         required:true
     },
-    ID:{
+    enrollment:{
         type:String,
-        required:true,
+        default:""
+        // required:true,
         //unique:true
     },
     avatar:{
@@ -27,12 +28,44 @@ const User_Schema=mongoose.Schema({
         default:""
     },
     cgpa:{
-        type:String
+        type:String,
+        default:""
+        
     
     },
     percentage:{
-        type:String
+        type:String,
+        default:""
     },
+    identity:{
+        type:String,
+        default:"student"
+    },
+    choices:[{
+
+        projId:{
+            type:String,
+            default:""
+        },
+        priority:{
+            type:String,
+            default:""
+        },
+        projName:{
+            type:String,
+            default:""
+        },
+        profName:{
+            type:String,
+            default:""
+        }
+    }],
+    alloted:{
+        projName:{
+            type:String,
+            default:""
+        }
+    }
     
 },
 {

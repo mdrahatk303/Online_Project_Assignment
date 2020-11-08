@@ -17,12 +17,20 @@ const Prof_Schema=mongoose.Schema({
         type:String, 
         required:true
     },
-    ID:{
-        type:String,
-        required:true,
-        unique:true
-    },
     avatar:{
+        type:String,
+        default:""
+    }
+    ,
+    identity:{
+        type:String,
+        default:"professor"
+    },
+    allot:{
+        type:String,
+        default:"0"
+    },
+    hod:{
         type:String,
         default:""
     }
@@ -30,7 +38,7 @@ const Prof_Schema=mongoose.Schema({
 },
 {
     timestamps:true
-});
+}); 
  
 //For uploading
 var storage = multer.diskStorage({
