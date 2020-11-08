@@ -3,13 +3,15 @@
     <input type="password" name="password" placeholder="Password" required>
     <input type="submit" value="Sign In">
 </form> -->
-
+<!-- 
 <link rel="stylesheet" href="/css/sign_in.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <h1 class="letschat"><span class="text">Online Project Assignment</span> </h1>
 <div class="login-page">
+  <h1 class="letschat"><span class="text">Sign In as <a href="/prof" style="color: #143661;text-decoration-line: revert;">Professor</a></span> </h1>
     <div class="form">
-      <form class="register-form" action="/create" method="POST">
+      Student login
+      <form class="register-form" action="/stud/create" method="POST">
         <input type="email" name="email" placeholder="Email" autocomplete="off" required>
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="text" name="ID" placeholder="Enrollment No." required>
@@ -19,7 +21,7 @@
         <button>Sign Up</button>
         <p class="message">Already registered? <a href="#">Sign In</a></p>
       </form>
-      <form class="login-form" action="/create-session" method="POST">
+      <form class="login-form" action="/stud/create-session" method="POST">
         <input type="email" name="email" placeholder="Email"/>
         <input type="password" name="password" placeholder="password"/>
         <button>login</button>
@@ -28,4 +30,70 @@
     </div>
   </div>
 
-  <script src="js/sign_in_up.js"></script>
+  <script src="js/sign_in_up.js"></script> -->
+
+
+
+
+  
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <link rel="stylesheet" href="/css/sign_in.css">
+    
+    <div class="login-reg-panel">
+        <div class="login-info-box">
+          <h2>Have an account?</h2>
+          <!-- <p>Lorem ipsum dolor sit amet</p> -->
+          <label id="label-register" for="log-reg-show">Login</label>
+          <input type="radio" name="active-log-panel" id="log-reg-show"  checked="checked">
+          <span style="padding-top: 8%;
+          font-size: xx-large;"><h2>Online Project Assignment</h2></span>
+        </div>
+                  
+        <div class="register-info-box">
+          <h2>Don't have an account?</h2>
+          
+          <!-- <p>Lorem ipsum dolor sit amet</p> -->
+          <label id="label-login" for="log-login-show">Register</label>
+          <input type="radio" name="active-log-panel" id="log-login-show">
+          <span style="padding-top: 8%;
+          font-size: xx-large;"><h2>Online Project Assignment</h2></span>
+        </div>
+              
+        <div class="white-panel">
+          <form action="/stud/create-session" method="POST">
+          <div class="login-show">
+            <h2>LOGIN</h2>
+            
+            <input type="email" placeholder="Email" name="email" required>
+            <input type="password" placeholder="Password" name="password" required>
+            <input type="submit" value="Student" style="margin-left: 1%;">
+            <input type="submit" formaction="/prof/create-session" value="Professor">
+            
+          </div>
+        </form>
+          <div class="register-show">
+            <h2>REGISTER</h2>
+            <form class="register-form" action="/stud/create" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" placeholder="Email" name="email" required>
+            <input type="password" placeholder="Password" name="password" required>
+            <input type="password" placeholder="Confirm Password" name="confirmPassword" required>
+            <input type="submit" value="Student" style="margin-left: 1%;">
+            <input type="submit" formaction="/prof/create" value="Professor">
+            
+  
+          </form>
+          </div>
+        </div>
+      </div>
+    
+      <script src="js/sign_in_up.js"></script> 
+      

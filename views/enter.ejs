@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		
-		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="/css/style.css" />
 			<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>WEBTECH</title>
@@ -13,53 +13,224 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	<style>
 		.bs-example{
-			margin: 20px;
+			margin: 6%;
 		}
 		.hoverIt:hover{
-			background-color: grey;
+			background-color: #27496d;
 		}
-	</style>
+				
+		* {
+		box-sizing: border-box;
+		}
+
+		input[type=text], select, textarea {
+		width: 100%;
+		padding: 12px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		resize: vertical;
+		}
+
+		label {
+		padding: 12px 12px 12px 12px;
+		display: inline-block;
+		}
+
+		input[type=submit] {
+		background-color:  #27496d;
+		color: white;
+		padding: 12px 20px;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+		float: right;
+		}
+
+		input[type=submit]:hover {
+		background-color: #45a049;
+		}
+
+		.container {
+		border-radius: 5px;
+		background-color:#00909e;
+		border:solid#d7d7e6;
+		padding: 20px;
+		}
+
+		.col-25 {
+		float: left;
+		width: 25%;
+		margin-top: 6px;
+		}
+
+		.col-75 {
+		float: left;
+		width: 75%;
+		margin-top: 6px;
+		}
+
+		/* Clear floats after the columns */
+		.row:after {
+		content: "";
+		display: table;
+		clear: both;
+		}
+
+		/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+		@media screen and (max-width: 600px) {
+		.col-25, .col-75, input[type=submit] {
+			width: 100%;
+			margin-top: 0;
+		}
+		}
+		
+
+</style>
 		
 	</head>
-	<body style="background:#2d2c2a">
+	<body >
 		<%- include('_header'); -%>
-		<div class="bs-example">
-		<form>
-			<table class="table table-dark" style="background-color: #1f2025;">
-				<thead>
-					<tr class="hoverIt">
-						<th>SNO</th>
-						<th>Project Name</th>
-						<th>Prof Name</th>
-						<th>Choice No.</th>
+		<%if(locals.user.cgpa.length>0 && locals.user.percentage.length>0 &&locals.user.enrollment.length>0){%>
+			<%if(locals.user.choices.length<=0){%>
+				<div class="bs-example">
+					<form method="POST" action="/proj">
+						<table class="table table-dark" style="background-color: #00909e;">
+							<thead >
+								<tr class="hoverIt" style="color: black;">
+									<th>SNO</th>
+									<th>Project Name</th>
+									<th>Prof Name</th>
+									<th>Choice No.</th>
+									
+								</tr>
+							</thead>
+							<tbody>
+								<%var i=0;%>
+								<%for(let proj of project){%>
+									<%i++%>
+									<tr class="hoverIt">
+										<td><%=i%></td>
+										<td><%=proj.name%></td>
+										<td><%=proj.prof%></td>
+										<td><input type="number" name="priority"></td>
+										<input type="hidden" name="projId" value="<%=proj.id%>">
+										<input type="hidden" name="projName" value="<%=proj.name%>">
+										<input type="hidden" name="profName" value="<%=proj.prof%>">
+										
+									</tr>
+								<%}%>	
+							</tbody>
+							</table>
+							<input type="submit" style="background: #27496d;
+							margin-right: 50%;">
+						</form>
+				</div>
+			<%}else{%>
+				<div class="bs-example">
+					<%if(locals.user.alloted.projName.length>0){%>
+					<h2 style="color:#034803;font-size:x-large;">You have been allocated <span style="color: darkblue; text-decoration: underline; font-size: xx-large;"><%=locals.user.alloted.projName%></span></h2>
+					<%}%>
+						<table class="table table-dark" style="background-color: #00909e;">
+							<thead >
+								<tr class="hoverIt" style="color: black;">
+									<th>SNO</th>
+									<th>Project Name</th>
+									<th>Prof Name</th>
+									<th>Choice No.</th>
+									
+								</tr>
+							</thead>
+							<tbody>
+								<%var i=0;%>
+								<%for(let choice of choices){%>
+									
+									<%if(locals.user.alloted.projName===choice.projName){%>
+										<tr class="hoverIt" style="background-color:darkblue;">
+											<td><%=i+1%></td>
+											<td><%=choice.projName%></td>
+											<td><%=choice.profName%></td>
+											<td><%=choice.priority%></td>
+										</tr>
+									<%}else{%>
+										<tr class="hoverIt">
+											<td><%=i+1%></td>
+											<td><%=choice.projName%></td>
+											<td><%=choice.profName%></td>
+											<td><%=choice.priority%></td>
+										</tr>
+									<%}%>
+										
+										
+									
+									<%i++%>
+								<%}%>	
+							</tbody>
+							</table>
+							
+				</div>
+			<%}%>	
+		<%}else{%>
 
-					</tr>
-				</thead>
-				<tbody>
-					<tr class="hoverIt">
-						<td>1</td>
-						<td>ABC</td>
-						<td>XYZ</td>
-						<td><input type="number"></td>
-					</tr>
-					<tr class="hoverIt">
-						<td>2</td>
-						<td>abc</td>
-						<td>xyz</td>
-						<td><input type="number"></td>
-					</tr>
-					<tr class="hoverIt">
-						<td>3</td>
-						<td>Abc</td>
-						<td>Xyz</td>
-						<td><input type="number"></td>
-					</tr>            
-				</tbody>
-			</table>
-			<input type="submit">
-		</form>
-		</div>
-		</body>
-		
+			<div class="container">
+				<h2 style="margin-left: 24%;
+				color: rgb(160 4 4);">Please Update missing Information below to proceed!!</h2>
+				<form method="POST" action="/stud/update" enctype="multipart/form-data">
+				<div class="row">
+					<div class="col-25">
+					<label for="fname">Email</label>
+					</div>
+					<div class="col-75">
+					<input type="text" id="fname" name="email" value="<%=locals.user.email%>">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-25">
+					<label for="lname">Name</label>
+					</div>
+					<div class="col-75">
+					<input type="text" id="lname" name="name" value="<%=locals.user.name%>">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-25">
+					<label for="id">Enrollment No.</label>
+					</div>
+					<div class="col-75">
+					<input type="text" id="id" name="enrollment" value="<%=locals.user.enrollment%>" placeholder="Your Enrollment No..">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-25">
+					<label for="per">Percentage</label>
+					</div>
+					<div class="col-75">
+					<input type="text" id="per" name="percentage" value="<%=locals.user.percentage%>" placeholder="Your percentage..">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-25">
+					<label for="cgpa">CGPA</label>
+					</div>
+					<div class="col-75">
+					<input type="text" id="cgpa" name="cgpa" value="<%=locals.user.cgpa%>" placeholder="Your cgpa..">
+					</div>
+				</div>
+				
+				<div class="row">
+					<input type="submit" value="Update">
+				</div>
+				</form>
+			</div>
+  
+			
+				<!-- <input type="email" name="email" placeholder="New Email" value="<%=user.email%>" required>
+				<input type="text" name="name" placeholder="New User Name" value="<%=user.name%>" required>
+				<input type="text" name="cgpa" placeholder="Your CGPA" value="<%=user.cgpa%>" required>
+				<input type="text" name="percentage" placeholder="Your percentage" value="<%=user.percentage%>" required>
+				<input type="file" placeholder="Profile Pic" name="avatar">
+				<input type="submit" value="Update"> -->
+		<%}%>
 	</body>
+	
 </html>
