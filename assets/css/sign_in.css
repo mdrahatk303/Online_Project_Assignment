@@ -1,12 +1,21 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
+body
+{
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    font-family: 'fira code';
+    background-color: #142850;
+}
+/* 
 :root {
 	--dark-color-a: #667aff;
 	--dark-color-b: #7386ff;
 	--light-color: #e6e9ff;
 	--success-color: #5cb85c;
 	--error-color: #d9534f;
-}
+} */
 
 .login-page {
   width: 360px;
@@ -16,19 +25,19 @@
 .form {
   position: relative;
   z-index: 1;
-  background: #1f2025;
+  background: #00909e;
   max-width: 360px;
   margin: 0 auto 100px;
   padding: 45px;
   text-align: center;
-  border: solid #545456;
+  border:solid#d7d7e6;
   border-radius: 21px;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  box-shadow: 0 0 20px 0#00909e, 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 .form input {
-  font-family: "Roboto", sans-serif;
+  font-family: 'fira code';
   outline: 0;
-  background: #4a4646;
+  /* background:#27496d; */
   width: 100%;
   border: 0;
   margin: 0 0 15px;
@@ -38,21 +47,21 @@
   color: black;
 }
 .form button {
-  font-family: "Roboto", sans-serif;
+  font-family: 'fira code';
   text-transform: uppercase;
   outline: 0;
-  background: #4a4646;
+  background: #27496d;
   width: 100%;
   border: 0;
   padding: 15px;
-  color:black;
+  color:#dae1e7;
   font-size: 14px;
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
 }
 .form button:hover,.form button:active,.form button:focus {
-  background: rgb(84, 87, 84);
+  background: rgb(27, 96, 128);
 }
 .form .message {
   margin: 15px 0 0;
@@ -100,34 +109,219 @@
 .container .info span .fa {
   color: #EF3B3A;
 }
-body {
-  /* background: #667aff;/* fallback for old browsers
+/* body {
+  background: #667aff;
+   fallback for old browsers
   background: -webkit-linear-gradient(right,#667aff, #667aff);
   background: -moz-linear-gradient(right, #667aff, #667aff);
   background: -o-linear-gradient(right,#667aff, #667aff);
   background: linear-gradient(to left,#667aff, #667aff);
-  */
+   
   background: #2d2c2a;
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;      
-}
+  -moz-osx-font-smoothing: grayscale;       
+} */
 
 .letschat
 {
-  margin-left:0;
+  /* margin-left:0;
   
   
   text-align: center;
   background-color:#1f2025;
   border:solid #545456;
+  border-radius: 21px; */
+  overflow: hidden;
+  background-color:#00909e;
+  margin-bottom: 10px;
+  /* padding-left: 12%; */
+  border: solid#d7d7e6;
+  text-align: center;
   border-radius: 21px;
 }
 .letschat .text{
-  color: #ada8a8;
-  /* text-decoration: underline; */
-  font-style: italic;
-  font-family: cursive;
+  font-family: 'fira code';
   margin-top: 10px;
   font-size: 50px;
+  color: #dae1e7;
 }
+
+
+
+   
+@import url('https://fonts.googleapis.com/css?family=Mukta');
+body{
+  font-family: 'Mukta', sans-serif;
+	height:100vh;
+	min-height:550px;
+  background-image: url("https://cache.careers360.mobi/media/presets/720X480/colleges/social-media/media-gallery/252/2018/5/8/IIEST-10.png");
+  
+	background-repeat: no-repeat;
+	background-size:cover;
+	background-position:center;
+	position:relative;
+    overflow-y: hidden;
+}
+a{
+  text-decoration:none;
+  color:#444444;
+}
+.login-reg-panel{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+	text-align:center;
+    width:70%;
+	right:0;left:0;
+    margin:auto;
+    height:400px;
+    background-color: #183c5a;
+}
+.white-panel{
+    background-color: rgba(255,255, 255, 1);
+    height:500px;
+    position:absolute;
+    top:-50px;
+    width:50%;
+    right:calc(50% - 50px);
+    transition:.3s ease-in-out;
+    z-index:0;
+    box-shadow: 0 0 15px 9px #00000096;
+}
+.login-reg-panel input[type="radio"]{
+    position:relative;
+    display:none;
+}
+.login-reg-panel{
+    color:#B8B8B8;
+}
+.login-reg-panel #label-login, 
+.login-reg-panel #label-register{
+    border:1px solid #9E9E9E;
+    padding:5px 5px;
+    width:150px;
+    display:block;
+    text-align:center;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight: 600;
+    font-size: 18px;
+}
+.login-info-box{
+    width:30%;
+    padding:0 50px;
+    top:20%;
+    left:0;
+    position:absolute;
+    text-align:left;
+}
+.register-info-box{
+    width:30%;
+    padding:0 50px;
+    top:20%;
+    right:0;
+    position:absolute;
+    text-align:left;
+    
+}
+.right-log{right:50px !important;}
+
+.login-show, 
+.register-show{
+    z-index: 1;
+    display:none;
+    opacity:0;
+    transition:0.3s ease-in-out;
+    color:#242424;
+    text-align:left;
+    padding:50px;
+}
+.show-log-panel{
+    display:block;
+    opacity:0.9;
+}
+.login-show input[type="text"], .login-show input[type="password"]{
+    width: 100%;
+    display: block;
+    margin:20px 0;
+    padding: 15px;
+    border: 1px solid #b5b5b5;
+    outline: none;
+}
+
+.login-show input[type="email"]{
+  width: 100%;
+  display: block;
+  margin:20px 0;
+  padding: 15px;
+  border: 1px solid #b5b5b5;
+  outline: none;
+}
+
+.login-show input[type="submit"] {
+    max-width: 150px;
+    width: 100%;
+    background: #444444;
+    color: #f9f9f9;
+    border: none;
+    padding: 10px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    float:right;
+    cursor:pointer;
+}
+.login-show a{
+    display:inline-block;
+    padding:10px 0;
+}
+
+.register-show input[type="text"], .register-show input[type="password"]{
+    width: 100%;
+    display: block;
+    margin:20px 0;
+    padding: 15px;
+    border: 1px solid #b5b5b5;
+    outline: none;
+}
+.register-show input[type="email"]{
+  width: 100%;
+  display: block;
+  margin:20px 0;
+  padding: 15px;
+  border: 1px solid #b5b5b5;
+  outline: none;
+}
+.register-show input[type="submit"] {
+    max-width: 150px;
+    width: 100%;
+    background: #444444;
+    color: #f9f9f9;
+    border: none;
+    padding: 10px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    float:right;
+    cursor:pointer;
+}
+.credit {
+    position:absolute;
+    bottom:10px;
+    left:10px;
+    color: #3B3B25;
+    margin: 0;
+    padding: 0;
+    font-family: Arial,sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    z-index: 99;
+}
+a{
+  text-decoration:none;
+  color:#2c7715;
+}
+    
+    
+    

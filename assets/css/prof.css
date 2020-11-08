@@ -1,0 +1,282 @@
+/* Body style */
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    font-family: 'fira code';
+    background-color: #142850;
+}
+
+/* app-container */
+
+.app-container{
+    height: auto;
+    width: 60vw;
+    /* border: 2px solid red; */
+    margin: 10px auto;
+    background-color: #00909e;
+    border: solid#d7d7e6;
+    border-radius: 10px;
+    padding: 5px 0 10px 0;
+}
+
+/* heading of the app */
+
+.heading-container{
+    font-size: 1.3rem;
+    text-align: center; 
+    color: #dae1e7;
+    border-bottom: 2px solid #dae1e7;
+}
+
+/* form section styling */
+
+#form-container{
+    background-color: #27496d;
+}
+
+/* form-container */
+
+.form-container{
+    padding:10px 0 ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+/* Todo Description container */
+
+.form-container .desc-container{
+    border-radius: 5px;
+    width: 95%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Description label */
+.desc-container label{
+    font-size: 1.7rem;
+    padding-left: 10px;
+    color: #dae1e7;
+}
+
+/* form input */
+input{
+    height: auto;
+    border: none;
+    font-size: 1em;
+    padding: 1rem 1rem 1rem 0.7rem;
+    background-color: #27496d;
+    border-bottom: 2px solid #dae1e7;
+    outline: none;
+    color: #dae1e7;
+
+}
+/* input placeholder */
+input::placeholder{
+    color: #dae1e7;
+}
+
+/* Todo date and category section */
+.form-container .other-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    /* border: 2px solid red; */
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+/* todo category section */
+
+.other-container .category-container{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 40%;
+    padding: 10px 10px 10px 25px;
+}
+
+/* category-container label */
+
+.category-container label{
+    font-size: 1.5rem;
+    padding-left: 10px;
+}
+
+/* select styling */
+
+select{
+    height: auto;
+    border: none;
+    font-size: 1em;
+    padding: 1rem 1rem 1rem 0.7rem;
+    background-color: #27496d;
+    border-bottom: 2px solid #dae1e7;
+    outline: none;
+    color: #dae1e7;
+}
+
+/* Date container */
+
+.other-container .date-container{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 40%;
+    padding: 10px 10px 10px 25px;
+}
+
+/* date label */
+.other-container label{
+    color: #dae1e7;
+    font-size: 1.5rem;
+    padding-left: 10px;
+}
+
+/* .other-container input{
+    border: none;
+    font-size: 1em;
+    padding: 1rem 1rem 1rem 0.7rem;
+    background-color: #ffd868;
+    border-bottom: 2px solid red;
+    outline: none;
+} */
+
+/* Form button container */
+
+.form-container .btn-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+}
+
+/* add task */
+
+.btn-container .add-task{
+    color: white;
+    font-size: 1.2rem;
+    height: 40px;
+    width: 30%;
+    background-color: #142850;
+    border: none;
+    border-radius: 2px;
+}
+
+/* delete task */
+
+.btn-container .delete-task{
+    color: white;
+    font-size: 1.2rem;
+    height: 40px;
+    width: 30%;
+    background-color: #b80d57;
+    border: none;
+    border-radius: 2px;
+}
+
+/* Showing the todos */
+
+.todos{
+    list-style: none;
+    height: auto;
+    width:100% ;
+    margin: auto;
+    padding: 0;
+    color: #dae1e7;
+}
+
+/* todos items */
+
+.todo-items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    border-bottom: 2px solid #dae1e7;
+    margin: auto;
+}
+
+/* Status of Todo */
+
+.todo-status{
+    flex-grow: 1;
+    /* width:1%; */
+    font-size: 1.5rem;
+    align-self: center;
+    text-align: center;
+    /* border: 2px solid red; */
+    height: auto;
+}
+
+/* Info of Todo */
+
+.todo-info{
+    flex-grow: 1;
+    width: 60%;
+    /* border: 2px solid white; */
+
+}
+
+/* Todo name */
+
+.todo-name{
+    font-size: 2rem;
+    text-transform: capitalize;
+    margin: 0 0 5px 0;
+    padding-top: 1.5rem;
+    align-self: center;
+    height: auto;
+}
+
+/* date */
+.todo-date{
+    font-size: 0.7rem;
+    margin: 0 0 15px 0;
+}
+
+/* Todo category */
+
+.todo-category{
+    flex-grow: 1;
+    width: 10%;
+    height: auto;
+    align-content: center;
+}
+
+/* todo button */
+
+.todo-category button {
+    font-size: 1.5rem;
+    height: 3rem;
+    padding: 0.5rem 2rem;
+    text-transform: capitalize;
+    border: none;
+    border-radius:3px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #dae1e7;
+    background-color: #b80d57;
+}
+
+/* Todo Delete button */
+
+.todo-category a{
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: #dae1e7;
+    background-color: #b80d57;
+}
+
+
+
+
+
+

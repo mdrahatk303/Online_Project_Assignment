@@ -1,24 +1,34 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-
-:root {
-	--dark-color-a: #667aff;
-	--dark-color-b: #7386ff;
-	--light-color: #e6e9ff;
-	--success-color: #5cb85c;
-	--error-color: #d9534f;
-}
-
-* {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+CSSResult
+EDIT ON
+html, body {
+  width: 100%;
+  height:100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
-	background:#2d2c2a;
-	margin: 20px;
+	 background: linear-gradient(-45deg, #04283a, #161719, #23a6d5, #2f3836); 
+	background-image: linear-gradient(to top left, #085078, #85D8CE);
+     background-size: 400% 400%; 
+	 animation: gradient 5s ease infinite;
+	/* background-image: url("https://cache.careers360.mobi/media/presets/720X480/colleges/social-media/media-gallery/252/2018/5/8/IIEST-10.png");
+  
+	background-repeat: no-repeat;
+	background-size:cover;
+	background-position:center; */
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 ul {
