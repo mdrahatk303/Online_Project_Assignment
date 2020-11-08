@@ -66,7 +66,7 @@ module.exports.destroy=function(req,res)
     if(req.user)
     req.flash('success','See you soon '+req.user.email+"!!");
     req.logout();
-    return res.redirect('back');
+    return res.redirect('/');
 }
 
 //Profile section

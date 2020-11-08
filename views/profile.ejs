@@ -11,6 +11,7 @@
               <input type="hidden" name="email" placeholder="New Email" value="<%=user.email%>" required>
               <input type="hidden" name="name" placeholder="New User Name" value="<%=user.name%>" required>
               <input type="hidden" name="cgpa" placeholder="Your CGPA" value="<%=user.cgpa%>" required>
+              <input type="hidden" name="enrollment" placeholder="Your CGPA" value="<%=user.enrollment%>" required>
               <input type="hidden" name="percentage" placeholder="Your percentage" value="<%=user.percentage%>" required>
         
                 <div class="row">
@@ -29,11 +30,19 @@
                                     <h5>
                                       <%=locals.user.name%>
                                     </h5>
-                                    <%if(locals.user.identity[0]==="p" && locals.user.hod==="hod"){%>
+                                    <!-- <%if(locals.user.identity[0]==="p" && locals.user.hod==="hod"){%>
                                         
-                                            <a href="/prof/hod">HOD</a>
+                                          <button style="border: none;
+                                          border-radius: 1.5rem;
+                                          width: 31%;
+                                          padding: 2%;
+                                          font-weight: 600;
+                                          color: #6c757d;
+                                          cursor: pointer;">
+                                              <a href="/prof/hod" style="text-decoration: none;">View As Hod</a>
+                                          </button>
                                           
-                                    <%}%>
+                                    <%}%> -->
                                     <h6>
                                       <%if(locals.user.identity[0]==='s'){%>
                                        Student
@@ -55,8 +64,10 @@
                     <div class="col-md-2">
                         <%if(locals.user.identity[0]==='s'){%>
                         <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+
                         <%}else{%>
                             <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" formaction="/prof/update"/>
+                            
                         <%}%>
                     </div>
                 </div>

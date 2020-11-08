@@ -136,7 +136,7 @@ module.exports.update= async function(req,res)
                 return res.redirect('back');
 
             } 
-            console.log(req.body);
+            //console.log(req.body);
             user.name=req.body.name;
             user.email=req.body.email;
             user.cgpa=req.body.cgpa;

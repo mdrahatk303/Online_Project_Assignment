@@ -7,6 +7,12 @@ body
     font-size: 15px;
     font-family: 'fira code';
     background-color: #142850;
+   
+    /* background-size: 400% 400%;
+    background-image: url(https://content3.jdmagicbox.com/comp/ambala/y5/9999px171.x171.191228161720.l7y5/catalogue/electronics-and-electrical-school-college-projects-ambala-1copbc28ph.jpg?clr=1d3a49);
+   
+    background-size: 398px;
+    animation: gradient 150s cubic-bezier(0.18, 0.89, 0.32, 1.28) infinite; */
 }
 /* 
 :root {

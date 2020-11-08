@@ -1,6 +1,9 @@
 const express=require('express');
 const port=8000;
 
+//For env var
+require('dotenv').config();
+
 //(the current version of express-session reads and writes cookies directly).
 //so no need go cookie parser
 const session=require('express-session');
@@ -43,7 +46,7 @@ app.use(session({
     saveUninitialized: false,
     resave: false,
     cookie: {
-        maxAge: (1000 * 60 * 20 )
+        maxAge: (10000 * 60 * 20 )
     },
     store: new MongoStore(
         {
