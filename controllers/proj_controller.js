@@ -1,6 +1,10 @@
 const Proj=require('../models/project');
 const User =require('../models/users');
 const Prof=require('../models/prof');
+
+//sending mail
+const mail=require('../mailer/allocate_mail');
+
 module.exports.proj_chosen= async function(req,res)
 {
     try {
@@ -44,6 +48,7 @@ module.exports.allocation=async function(req,res)
         //console.log("Sorted students "+ students)
         for(let stud of students)
         {
+            await mail.allocateMail(stud);
             let sortedChoices=await stud.choices.sort((a,b) => (a.priority > b.priority) ? 1 : ((b.priority > a.priority) ? -1 : 0)); 
             // console.log("SortedChoices o"+ sortedChoices);
             for(let choice of sortedChoices)
@@ -69,10 +74,11 @@ module.exports.allocation=async function(req,res)
     let prof=await Prof.find({});
     for(let p of prof)
     {
+        // await mail.allocateMail(p.email);
         p.allot="1";
         await p.save();
     }
     
-    return res.redirect('/');
+    return res.redirect('back');
 }
 
